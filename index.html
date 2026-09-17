@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>說走就走旅遊日語授業アドバイス</title>
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-light: #EEF2FF;
+            --accent-pink: #E11D48;
+            --accent-pink-bg: #FFF1F2;
+            --accent-blue: #0284C7;
+            --accent-blue-bg: #F0F9FF;
+            --accent-green: #059669;
+            --accent-green-bg: #ECFDF5;
+            --bg-main: #F8FAFC;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Banner Header */
+        .header {
+            background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+            color: white;
+            padding: 32px 28px;
+            border-radius: 20px;
+            box-shadow: 0 12px 24px -6px rgba(79, 70, 229, 0.3);
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
+        /* Letter Card to Kinugawa Sensei */
+        .letter-card {
+            background: white;
+            border-left: 6px solid #6366F1;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 28px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .letter-card h2 {
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .letter-card p {
+            font-size: 14px;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 28px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-main);
+        }
+
+        /* 3 Core Principles Grid */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .principle-card {
+            background: white;
+            border-radius: 14px;
+            padding: 20px;
+            border: 1px solid #E2E8F0;
+            box-shadow: var(--card-shadow);
+        }
+
+        .principle-num {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 2px 10px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .principle-card h3 {
+            font-size: 16px;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .principle-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Schedule Table Design */
+        .table-container {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #E2E8F0;
+            margin-bottom: 32px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        th {
+            background: #F1F5F9;
+            color: #334155;
+            padding: 14px 16px;
+            font-weight: 700;
+            border-bottom: 2px solid #E2E8F0;
+        }
+
+        td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #F1F5F9;
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .time-badge {
+            background: #EEF2FF;
+            color: var(--primary);
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 8px;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        /* Detail Shortcuts Cards */
+        .shortcut-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+            border: 1px solid #E2E8F0;
+            box-shadow: var(--card-shadow);
+        }
+
+        .shortcut-card h3 {
+            font-size: 17px;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #F1F5F9;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .shortcut-list {
+            list-style: none;
+        }
+
+        .shortcut-list li {
+            font-size: 14px;
+            color: #334155;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .shortcut-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Grammar Highlights */
+        .grammar-flex {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .grammar-flex {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .target-box {
+            background: var(--accent-pink-bg);
+            border: 1px solid #FECDD3;
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .target-box h4 {
+            color: var(--accent-pink);
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .support-box {
+            background: var(--accent-blue-bg);
+            border: 1px solid #BAE6FD;
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .support-box h4 {
+            color: var(--accent-blue);
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        /* Closing Card */
+        .closing-card {
+            background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%);
+            border: 1px solid #FECDD3;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            margin-top: 32px;
+        }
+
+        .closing-card h3 {
+            color: #9F1239;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .closing-card p {
+            color: #881337;
+            font-size: 14px;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 12px;
+            margin-top: 32px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Header -->
+    <header class="header">
+        <h1>說走就走旅遊日語授業アドバイス</h1>
+        <p>衣川先生の強みを活かし、90分で焦らずゆったり進めるための授業ガイド</p>
+    </header>
+
+    <!-- Letter to Kinugawa Sensei -->
+    <section class="letter-card">
+        <h2>✉️ 衣川先生へ：90分授業を焦らず楽しむための指導アイデアのご提案</h2>
+        <p>衣川先生、いつも熱心なご指導をありがとうございます！先生の授業は、豊かな観光地情報や楽しいエピソードが満載で、受講生からも「日本の魅力がよく伝わる！」と大変好評です。</p>
+        <p>一方で、今回の教材は「観光地紹介・単語・11個のN3文法・会話・創作」と大変ボリュームが大きいため、順番通りに進めるとどうしても時間が足りなくなってしまいがちです。</p>
+        <p>そこで、先生の魅力である「楽しさ」を維持しながら、先生も受講生も焦らず、受講生の発話量を最大限に増やせる授業のコツと<strong>90分モデルスケジュール</strong>をまとめました。ぜひ参考にしてみてください！</p>
+    </section>
+
+    <!-- 3 Core Principles -->
+    <h2 class="section-title">💡 授業づくりの3つの基本方針</h2>
+    <div class="principles-grid">
+        <div class="principle-card">
+            <span class="principle-num">方針 1</span>
+            <h3>「読む・覚える」から「会話の中で使う」へ</h3>
+            <p>本文や単語を1つずつ解説するのではなく、会話文やアウトプット練習の中で一緒に触れることで時間を大幅にギュッと縮められます。</p>
+        </div>
+        <div class="principle-card">
+            <span class="principle-num">方針 2</span>
+            <h3>内容のメリハリ（優先順位づけ）</h3>
+            <p>すべての文法を均等に説明するのではなく、「授業でしっかり練習する文法（4個程度）」と「確認程度にとどめる文法（予習・復習用）」に分けます。</p>
+        </div>
+        <div class="principle-card">
+            <span class="principle-num">方針 3</span>
+            <h3>アウトプット（発話）時間の確保</h3>
+            <p>最後の会話創作タスクに約10分をしっかり確保し、「今日習った言葉を使って楽しく話せた！」という達成感を受講生に持ち帰ってもらいます。</p>
+        </div>
+    </div>
+
+    <!-- 90-Min Model Schedule -->
+    <h2 class="section-title">⏱️ 90分授業の時間配分モデル</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%;">時間</th>
+                    <th style="width: 30%;">モジュール・学習内容</th>
+                    <th style="width: 50%;">進め方のコツ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="time-badge">00–10分 (10分)</span></td>
+                    <td><strong>導入・ウォームアップ</strong></td>
+                    <td>・スライドの写真を提示し、秋の東京の魅力をサクッと紹介<br>・「秋の東京で行きたい場所は？」と受講生に質問してウォーミングアップ</td>
+                </tr>
+                <tr>
+                    <td><span class="time-badge">10–35分 (25分)</span></td>
+                    <td><strong>コアA：自然・紅葉描写</strong><br><small style="color:var(--text-muted);">(昭和記念公園・明治神宮外苑)</small></td>
+                    <td>・自然観光地をまとめて進行<br>・会話①・③を中心に音読＆キーフレーズ言い換え<br>・比喩や感想の文型（<code>〜みたい</code> <code>〜ように見える</code> <code>〜ような気がする</code>）を会話の中でポイント解説</td>
+                </tr>
+                <tr>
+                    <td><span class="time-badge">35–55分 (20分)</span></td>
+                    <td><strong>コアB：散策・文化体験</strong><br><small style="color:var(--text-muted);">(新宿御苑・東京芸術祭)</small></td>
+                    <td>・公園散策からイベント体験の流れで進行<br>・会話②を活用し、<code>〜てみる</code> などの文型を使った簡単なロールプレイを実施</td>
+                </tr>
+                <tr>
+                    <td><span class="time-badge">55–65分 (10分)</span></td>
+                    <td><strong>文法確認・まとめ</strong></td>
+                    <td>・その他のサブ文法（<code>〜ながら</code> <code>〜てもいい</code> <code>〜ばかり</code>等）をスライドでサクッと確認<br>・「先ほどの会話文にも登場していましたね」と触れる程度でOK</td>
+                </tr>
+                <tr>
+                    <td><span class="time-badge">65–80分 (15分)</span></td>
+                    <td><strong>実践タスク（会話創作）</strong><br><small style="color:#059669; font-weight:bold;">★効率的OUTPUT</small></td>
+                    <td>・穴埋め・会話作成タスクをペアまたは個人で実施（8〜10分）<br>・本日扱った文型を2個以上使って発表（アウトプット中心）</td>
+                </tr>
+                <tr>
+                    <td><span class="time-badge">80–90分 (10分)</span></td>
+                    <td><strong>フィードバック・締め</strong></td>
+                    <td>・良かった点の講評とポジティブなフィードバック<br>・詳しい観光地解説プリントを「復習用」として案内</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Concrete Shortcut Examples -->
+    <h2 class="section-title">📌 各パートをギュッと短縮する具体例</h2>
+
+    <!-- Part 1 -->
+    <div class="shortcut-card">
+        <h3>1. 観光地紹介・本文（テキスト）</h3>
+        <ul class="shortcut-list">
+            <li><strong>1文ずつの音読や翻訳はスキップ：</strong> 1文ずつ読んだり訳したりすると20〜30分かかってしまいます。</li>
+            <li><strong>「写真＋先生の15秒要約」で進める：</strong> 写真を見せながら「ここは昭和記念公園です。11月はイチョウが黄色くなってきれいですよ」と短く紹介します。</li>
+            <li><strong>ワンポイントQ&Aを活用：</strong> 「本文から、ここでできるアクティビティを探してみましょう！」と問いかけ、受講生に「ピクニックです」と探してもらう形にすると3分で終わります。</li>
+        </ul>
+    </div>
+
+    <!-- Part 2 -->
+    <div class="shortcut-card">
+        <h3>2. 単語（語彙）</h3>
+        <ul class="shortcut-list">
+            <li><strong>全体のリピートは不要：</strong> 既習の言葉や見ればわかる名詞は説明を省きます。</li>
+            <li><strong>重要動詞（4〜5個）に絞る：</strong> 「舞う」「色づく」「染まる」「振り返る」などN3レベルの重要動詞だけをピックアップ。</li>
+            <li><strong>ジェスチャーや画像で印象づける：</strong> 落ち葉の画像を見せながら「風で葉っぱが……『舞う』ですね！」とイメージでパッと伝えます。</li>
+        </ul>
+    </div>
+
+    <!-- Part 3 -->
+    <div class="shortcut-card">
+        <h3>3. N3文法（全11個）</h3>
+        <p style="font-size: 14px; color: #475569; margin-bottom: 12px;">文法はメリハリをつけて2つのグループに分けます：</p>
+        <div class="grammar-flex">
+            <div class="target-box">
+                <h4>🎯 ターゲット文法（4個）</h4>
+                <p style="font-size: 13px; color: #881337; font-weight: bold; margin-bottom: 6px;">〜みたい / 〜ように見える / 〜てみる / 〜ような気がする</p>
+                <p style="font-size: 13px; color: #4C0519;">会話でよく使うため、例文を出してしっかり練習します。</p>
+            </div>
+            <div class="support-box">
+                <h4>💡 サポート文法（7個）</h4>
+                <p style="font-size: 13px; color: #0369A1; font-weight: bold; margin-bottom: 6px;">〜ながら / 〜ばかり / 〜てもいい / 〜たら / 〜そうだ / 〜ことになる / 〜ておく</p>
+                <p style="font-size: 13px; color: #0C4A6E;">「会話の中に入っていますね」「意味は〜です」と確認程度にとどめます。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Closing Message -->
+    <section class="closing-card">
+        <h3>🌸 おわりに</h3>
+        <p>衣川先生の明るいお人柄と豊富な知識は、クラスの何よりの魅力です！<br>解説を少しコンパクトにして「受講生に話してもらう時間」を増やすことで、先生ご自身も時計を気にせずゆったりと授業を楽しむことができるようになります。<br>無理のない範囲で、ぜひ試しやすい部分から取り入れてみてくださいね。いつも素敵な授業をありがとうございます！応援しております！</p>
+    </section>
+
+    <footer class="footer-note">
+        說走就走旅遊日語 授業アドバイス マニュアル — 衣川先生向け指導ガイド
+    </footer>
+
+</body>
+</html>
